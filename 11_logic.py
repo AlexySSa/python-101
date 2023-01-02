@@ -7,3 +7,6 @@ print("False and False =>", False and False)
 
 print(10 > 5 and 5 < 10)
 print(10 > 5 and 5 > 10)
+
+stock = int(input("ingrese el numero de stock => "))
+print(stock >= 100 and stock <= 1000)
