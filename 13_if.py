@@ -1,4 +1,6 @@
-if True:
+if True: 
+<<<<<<< HEAD
+<<<<<<< HEAD
   print("deberia ejecutarse ")
 
   if False:
@@ -27,3 +29,10 @@ else:
   print("el stock no es correcto por que es de " + str(stock))
   
 '''
+
+=======
+  print("deberia ejecutarse ")
+>>>>>>> origin/main
+=======
+  print("deberia ejecutarse ")
+>>>>>>> origin/main
