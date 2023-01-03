@@ -1,4 +1,5 @@
 if True: 
+<<<<<<< HEAD
   print("deberia ejecutarse ")
 
   if False:
@@ -28,3 +29,6 @@ else:
   
 '''
 
+=======
+  print("deberia ejecutarse ")
+>>>>>>> origin/main
