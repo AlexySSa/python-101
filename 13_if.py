@@ -1,5 +1,4 @@
 if True: 
-
   print("deberia ejecutarse ")
 
   if False:
@@ -23,8 +22,9 @@ else:
 stock = int(input("digita el stock =>" + " "))
 
 if stock >= 100 and stock <= 1000:
-  print("el stock es correcto por que es de " + str(stock))
+  print("el stock es correcto por  que es de " + str(stock))
 else:
   print("el stock no es correcto por que es de " + str(stock))
   
 '''
+
