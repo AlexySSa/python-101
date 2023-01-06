@@ -2,40 +2,84 @@ import random
 
 opcions = ("piedra", "papel", "tijeras")
 
-user_opcion = input("piedra, papel o tijeras => ")
-user_opcion = user_opcion.lower()
+PC_wins = 0
+user_wins = 0
 
-if not user_opcion in opcions:
-  print("la opcion que eligiste nada que ver por que es ", user_opcion)
-  exit()
-  
-PC_opcion = (random.choice(opcions))
+rounds = 1
 
-print("user opcion => ", user_opcion)
-print("PC opcion => ",PC_opcion)
+while True:
 
-if(user_opcion == PC_opcion):
-  print("este es un empate")
+  print("*" * 10)
+  print("Ronda",rounds)
+  print("*" * 10)
+
+  print("PC_Wins:", PC_wins)
+  print("User_Wins:", user_wins)
   
-elif user_opcion == "piedra":
-  if PC_opcion == "tijeras":
-    print("piedra gana a tijeras")
-    print("user gano")
-  else:
-   print("papel gana a piedra")
-   print("PC gano")
-elif user_opcion == "papel":
-  if PC_opcion == "piedra":
-    print("papel gana a piedra")
-    print("user gano")
-  else:
-    print("tijeras gana a papel ")
-    print("PC gano")
-elif user_opcion == "tijeras":
-  if PC_opcion == "papel":
-    print("tijeras gana a papel")
-    print("user gano")
-  else:
-    print("piedra gana a tijeras")
-    print("PC gano")
+  user_opcion = input("piedra, papel o tijeras => ")
+  user_opcion = user_opcion.lower()
   
+  if not user_opcion in opcions:
+    print("la opcion que eligiste nada que ver por que es", user_opcion)
+    #exit() tambien puede servir
+    continue
+#el contador de rounds va en este sitio para que continue lo afecte
+  rounds += 1
+      
+  PC_opcion = (random.choice(opcions))
+  
+  print("user opcion => ", user_opcion)
+  print("PC opcion => ",PC_opcion)
+  
+  if(user_opcion == PC_opcion):
+    print("este es un empate")
+    
+  elif user_opcion == "piedra":
+    if PC_opcion == "tijeras":
+      print("piedra gana a tijeras")
+      print("user gano")
+      user_wins += 1
+    else:
+     print("papel gana a piedra")
+     print("PC gano")
+     PC_wins += 1
+  elif user_opcion == "papel":
+    if PC_opcion == "piedra":
+      print("papel gana a piedra")
+      print("user gano")
+      user_wins += 1
+    else:
+      print("tijeras gana a papel ")
+      print("PC gano")
+      PC_wins += 1
+  elif user_opcion == "tijeras":
+    if PC_opcion == "papel":
+      print("tijeras gana a papel")
+      print("user gano")
+      user_wins += 1
+    else:
+      print("piedra gana a tijeras")
+      print("PC gano")
+      PC_wins += 1
+#aqui estoy sacando las victorias pero al mismo tiempo reinicio el bucle si el jugador lo desea
+  if PC_wins == 3:
+    print(f"PC gano con {PC_wins} ganados")
+    exi = input("¿deseas jugar de nuevo? (s/n) => ")
+    if exi == "s":
+      rounds = 0
+      PC_wins = 0
+      user_wins = 0
+      print("Ronda",rounds)
+    else:
+      exit()
+#aqui estoy sacando las victorias pero al mismo tiempo reinicio el bucle si el jugador lo desea
+  if user_wins == 3:
+    print(f"user gano con {user_wins} wins")
+    exi = input("¿deseas jugar de nuevo? (s/n) => ")
+    if exi == "s":
+      rounds = 0
+      PC_wins = 0
+      user_wins = 0
+      print("            NUEVA PARTIDA")
+    else:
+      exit()
