@@ -20,3 +20,24 @@ person = {
 }
 for key in person:
   print(key, "=>", person[key])
+
+for key, value in person.items():
+  print(key, "=>", value)
+
+people = [
+  {
+    "name": "Nico",
+    "age": 34
+  },
+  {
+    "name": "Alexy",
+    "age": 16
+  },
+  {
+    "name": "Santi",
+    "age": 12
+  }
+]
+
+for person in people:
+  print("name =>",person["name"])
